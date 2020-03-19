@@ -1,0 +1,61 @@
+<SearchInput></SearchInput>
+<!-- 轮播图 开始 -->
+<view class="index_swiper">
+  <!-- 
+    swiper 默认的宽度和高度 100% * 150px
+    image 默认的宽度 100%(320px) * 240px
+          原图的宽度 和高度 750px * 340px
+          mode="widthFix"
+    swiper标签 加一个高度 高度是要动态变化 
+                height:340rpx;
+          原图的宽度 / 原图的高度 = 变化后的图片的宽度(750rpx) / 变化后的高度？
+          750px /  340px = 750rpx / xxx rpx
+   -->
+  <swiper indicator-dots autoplay circular>
+    <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+      <navigator>
+        <image  mode="widthFix" src="{{item.image_src}}"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 轮播图 结束 -->
+
+<!-- 分类导航 开始 -->
+<view class="index_nav_cate">
+  <navigator
+  wx:for="{{navCateList}}"
+  wx:key="name"
+  >
+  <image src="{{item.image_src}}" mode="widthFix"> </image>
+</navigator>
+</view>
+<!-- 分类导航 结束 -->
+
+<!-- 楼层 开始 -->
+<view class="index_floor">
+  <view 
+  wx:for="{{floorList}}"
+  wx:for-index="index1"
+  wx:for-item="item1"
+  wx:key="item"
+  class="floor_item">
+  <!-- 标题 -->
+  <view class="floor_title">  <image mode="widthFix" src="{{item1.floor_title.image_src}}"></image> </view>
+  <!-- 内容 -->
+  <view class="floor_list">
+    <navigator
+    wx:for="{{item1.product_list}}"
+    wx:for-index="index2"
+    wx:for-item="item2"
+    wx:key="name"
+    class="goods_item"
+    >
+    <image 
+    mode="{{index2===0?'widthFix':'scaleToFill'}}"
+      src="{{item2.image_src}}"></image>
+  </navigator>
+  </view>
+</view>
+</view>
+<!-- 楼层 结束 -->

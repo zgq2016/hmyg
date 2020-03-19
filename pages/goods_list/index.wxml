@@ -1,0 +1,27 @@
+<SearchInput></SearchInput>
+<!-- 父向子传递数据 -->
+<!-- 绑定一个自定义事件 -->
+<Tabs  bindtitleChange="handleTitleChange" tabs="{{tabs}}">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="first_tab">
+      <navigator class="goods_group"
+      wx:for="{{goodsList}}"
+      wx:key="goods_id"
+      url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+      >
+        <!-- 左侧图片 -->
+        <view class="goods_img_wrap">
+          <image mode="widthFix" src="{{item.goods_small_logo||'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565147328&di=3438dbd9e03b9c4abfbd3113abfbc445&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.tucaod.com%2Fwp-content%2Fuploads%2F2017%2F12%2F404huyazhibo.jpg'}}" ></image>
+        </view>
+        <!-- 右侧商品信息 -->
+        <view class="goods_info_wrap">
+          <view class="goods_name">{{item.goods_name}}</view>
+          <view class="goods_price">￥{{item.goods_price}}</view>
+        </view>
+      </navigator>
+      <!-- <view class="loadding" >加载中</view> -->
+    </view>
+  </block>
+  <block wx:elif="{{tabs[1].isActive}}">1-正在开发中。。。。</block>
+  <block wx:elif="{{tabs[2].isActive}}">2-正在开发中。。。。</block>
+</Tabs>

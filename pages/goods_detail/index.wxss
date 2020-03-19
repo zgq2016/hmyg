@@ -1,0 +1,91 @@
+page {
+  padding-bottom: 90rpx;
+}
+.detail_swiper swiper {
+  /* 
+    原图的宽 / 原图的高 =变化后的图片的宽度 / 高度
+    height =  750rpx *  原图的高 / 原图的宽
+                   750rpx *      400 / 4000
+     */
+  height: 450rpx;
+  text-align: center;
+}
+.detail_swiper swiper image {
+  width: 50%;
+}
+.goods_price {
+  color: var(--themeColor);
+  font-weight: 600;
+  font-size: 32rpx;
+  padding: 20rpx 10rpx;
+}
+.goods_info {
+  padding: 10rpx;
+  display: flex;
+  border-top: 10rpx solid #ccc;
+  border-bottom: 10rpx solid #ccc;
+}
+.goods_info .goods_name {
+  flex: 5;
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_info .goods_collect {
+  border-left: 1rpx solid #000;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.goods_info .goods_collect .iconfont {
+  font-size: 40rpx;
+}
+.goods_detail .goods_detail_title {
+  padding: 20rpx 10rpx;
+  color: var(--themeColor);
+  font-size: 40rpx;
+  font-weight: 600;
+  border-bottom: 10rpx solid #ccc;
+}
+.btm_tool {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 90rpx;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  border-top: 1rpx solid #dedede;
+}
+.btm_tool .tool_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.btm_tool .tool_item button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.btm_tool .btn_cart {
+  flex: 2;
+  background-color: orange;
+  color: #fff;
+  font-size: 34rpx;
+}
+.btm_tool .btn_buy {
+  flex: 2;
+  background-color: orangered;
+  color: #fff;
+  font-size: 34rpx;
+}

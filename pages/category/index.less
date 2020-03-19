@@ -1,0 +1,65 @@
+.cate_container {
+  padding-top: 5rpx;
+  display: flex;
+  /* 当前高度 = 视口的高度 - 头部搜索框的高度 */
+  /* height: calc; */
+  /*  因为 less中 直接把 除法运算给你执行了！！！！  */
+  /* 不想less来处理 calc中的代码 直接原样输出 */
+  height: ~"calc( 100vh - 90rpx)";
+}
+
+/* 以前的小程序版本 view标签是无法实现滚动 */
+/* view{
+  overflow: scroll;
+} */
+
+.left_menu {
+  /* h100% */
+  flex: 1;
+  .menu_item {
+    height: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+    color: #000;
+  }
+  .active {
+    color: var(--themeColor);
+    border-left: 5rpx solid currentColor;
+  }
+}
+.right_content {
+  flex: 4;
+  .goods_group {
+    .goods_title {
+      height: 80rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .delimiter {
+        color: #666;
+        padding: 0 20rpx;
+      }
+
+      .goods_group_title {
+        font-size: 30rpx;
+        color: #000;
+      }
+    }
+
+    .goods_list {
+      display: flex;
+      flex-wrap: wrap;
+      navigator {
+        width: 33.33%;
+        text-align: center;
+        image{
+          width: 50%;
+        }
+        .goods_name {
+        }
+      }
+    }
+  }
+}

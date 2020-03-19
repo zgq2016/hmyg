@@ -1,0 +1,36 @@
+.first_tab{
+  .goods_group{
+    display: flex;
+    border-bottom: 1rpx solid #ccc;
+    .goods_img_wrap{
+      flex: 1;
+      padding:20rpx 40rpx;
+      image{}
+    }
+    .goods_info_wrap{
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .goods_name{
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp:2;
+      }
+      .goods_price{
+        color: var(--themeColor);
+        font-size: 34rpx;
+      }
+    }
+  }
+}
+
+// .loadding{
+//   height: 100rpx;
+//   background-color: #ccc;
+//   color: #666;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
